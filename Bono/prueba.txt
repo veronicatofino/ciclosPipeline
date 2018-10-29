@@ -1,0 +1,51 @@
+addi $s0, $0, 0
+
+addi $s1, $0, 16
+
+addi $s2, $0, 1
+
+addi $s5, $0, 0
+
+ciclo1 :
+
+beq $s0, $s1, salir
+
+sll $s5, $s2, 2
+
+add $s0, $s5, $s0
+
+j ciclo1
+
+salir :
+
+addi $s5, $0, 1
+
+addi $s3, $s5, 3
+
+addi $s0, $0, 0
+
+ciclo2 :
+
+beq $s0, $s3, salir2
+
+add $s0, $s2, $s0
+
+j ciclo2
+
+salir2 :
+
+addi $s5, $0, 1
+
+addi $s3, $s5, 3
+
+addi, $s0, $0, 0
+
+ciclo3 :
+
+beq $s0, $s3, salir3
+
+add $s0, $s2, $s0
+
+j ciclo3
+
+salir3 :

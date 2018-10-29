@@ -1,0 +1,15 @@
+addi $s0, $0, 0
+addi $s1, $0, 8
+addi $s2, $0, 1
+addi $s5, $0, 0
+addi $t2, $0, 2
+ciclo1 :
+beq $s0, $s1, salir
+sll $s5, $s2, 2
+add $s0, $s5, $s0
+addi $t7, $0, 0
+ciclo2 :
+beq $t7, $t2, ciclo1
+addi $t7, $t7, 1
+j ciclo2
+salir :

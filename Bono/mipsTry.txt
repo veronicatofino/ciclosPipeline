@@ -1,0 +1,27 @@
+lui $s0, 0x1000
+ori $s0, $s0, 0x0020
+addi $s1, $0, 10
+addi $s2, $0, 0
+sll $t1, $s1, 2
+addi $t3, $0, 40
+Fila :
+beq $s2, $s1, Fin
+addi $s3, $0, 0
+Colu :
+beq $s3, $s1, Incfila
+sll $t2, $s3, 2
+mul $t4, $s2, $t3
+add $t4, $t4, $t2
+add $t4, $t4, $s0
+add $t1, $t1, $s3
+add $t1, $t1, $s2
+lw $s5, 0($t4)
+add $t1, $t1, $s5
+sw $t1, 0($t4)
+addi $s3, $s3, 1
+j Colu
+Incfila :
+addi $s2, $s2, 1
+j Fila
+Fin :
+jr $ra
